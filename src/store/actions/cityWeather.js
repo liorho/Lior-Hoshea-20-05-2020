@@ -2,11 +2,11 @@ import * as api from '../api';
 import { FETCH_CITY_WEATHER, FETCH_CITY_WEATHER_SUCCESS, FETCH_CITY_WEATHER_FAILURE, SET_FAVORITE_TO_CITY_WEATHER } from './actionTypes';
 import { mapCityWeather } from '../utils/mapCityWeather';
 
-// dummy
+// Dummy -->
 let dummyCurrentConditions = require('../../data-samples/telAvivCurrent.json');
 const dummyForecast = require('../../data-samples/telAvivForecast.json');
 dummyCurrentConditions = dummyCurrentConditions[0];
-// dummy
+// --> Dummy
 
 export const fetchCityWeather = (id, city, country) => async (dispatch) => {
   dispatch({
@@ -18,7 +18,7 @@ export const fetchCityWeather = (id, city, country) => async (dispatch) => {
       type: FETCH_CITY_WEATHER_SUCCESS,
       payload: { ...mapCityWeather(currentConditions.data[0], fiveDaysForecast.data), id, city, country },
 
-      // dummy:
+      // Dummy:
       // payload: { ...mapCityWeather(dummyCurrentConditions, dummyForecast), id, city, country },
     });
   } catch (error) {

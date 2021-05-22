@@ -1,14 +1,17 @@
 import * as api from '../api';
 import { FETCH_CITIES_AC, FETCH_CITIES_AC_SUCCESS, FETCH_CITIES_AC_FAILURE, RESET_CITIES_AC } from './actionTypes';
 import { mapCitiesAC } from '../utils/mapCitiesAC';
-const dummyCities = require('../../data-samples/telAutoComplete.json');
+
+// Dummy:
+// const dummyCities = require('../../data-samples/telAutoComplete.json');
 
 export const fetchCitiesAC = (input) => async (dispatch) => {
   dispatch({
     type: FETCH_CITIES_AC,
   });
   try {
-    const {data} = await api.getCitiesAC(input);
+    const { data } = await api.getCitiesAC(input);
+    // Dummy:
     // const data = dummyCities;
     dispatch({
       type: FETCH_CITIES_AC_SUCCESS,

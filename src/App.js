@@ -19,7 +19,7 @@ function App() {
       try {
         const [lat, lon] = await getLatLon();
         const { id, city, country } = await getCityByLatLon(lat, lon);
-        //dummy:
+        // Dummy:
         // const { id, city, country } = { city: 'Tel Aviv', country: 'Israel', id: '215854' };
         dispatch(fetchCityWeather(id, city, country));
       } catch (error) {
