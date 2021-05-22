@@ -3,7 +3,7 @@ import { FETCH_CITY_WEATHER, FETCH_CITY_WEATHER_SUCCESS, FETCH_CITY_WEATHER_FAIL
 const initialState = {
   isLoading: false,
   error: '',
-  weather: { city: 'Tel Aviv', country: 'Israel', id: '215854' },
+  weather: {},
 };
 
 const cityWeather = (state = initialState, action) => {

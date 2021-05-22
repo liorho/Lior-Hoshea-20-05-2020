@@ -1,4 +1,6 @@
+export const mapCity = (city) => {
+  return { id: city.Key, city: city.LocalizedName, country: city.Country.LocalizedName }
+}
+
 export const mapCitiesAC = (cities) =>
-  cities.map((c) => {
-    return { id: c.Key, city: c.LocalizedName, country: c.Country.LocalizedName };
-  });
+  cities.map(mapCity);

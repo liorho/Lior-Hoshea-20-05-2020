@@ -1,4 +1,4 @@
-const roundTemperature = (temperature) => Math.round(temperature)
+import {roundTemperature} from '../../utils'
 
 const mapCurrentConditions = (currentWeather) => {
   return {

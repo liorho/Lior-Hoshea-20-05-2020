@@ -1,4 +1,5 @@
 {
+  "homepage": "http://liorho.github.io/Lior-Hoshea-20-05-2020",
   "name": "weatherly",
   "version": "0.1.0",
   "private": true,
@@ -8,6 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-bootstrap-autosuggest": "^0.5.0",
@@ -21,6 +23,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",

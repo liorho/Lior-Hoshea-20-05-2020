@@ -8,7 +8,7 @@ import { fetchCityWeather } from '../../store/actions/cityWeather';
 import { fetchCitiesAC, resetCitiesAC } from '../../store/actions/citiesAC';
 import WithLoadAndErrorHandler from '../hoc/WithLoadAndErrorHandler';
 
-const DELAY = 1000;
+const DELAY = 800;
 
 function SearchField() {
   const [input, setInput] = useState('');
@@ -28,11 +28,11 @@ function SearchField() {
     setTimeout(() => setInput(e.target.value), DELAY);
   };
 
-  useEffect(() => ReactDOM.findDOMNode(formInput.current).focus(), []);
+  useEffect(() => ReactDOM.findDOMNode(formInput.current).focus(), [dispatch]);
 
   useEffect(() => {
     if (input !== '') dispatch(fetchCitiesAC(input));
-  }, [input]);
+  }, [dispatch ,input]);
 
   return (
     <Form>

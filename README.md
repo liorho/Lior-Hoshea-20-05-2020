@@ -4,7 +4,7 @@
 Provided by [AccuWeather](https://developer.accuweather.com/).
 
 
-Demo: [www.weatherly]()
+Demo: [Weatherly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
 
 ## Table Of Contents
 - [Weatherly](#weatherly)
