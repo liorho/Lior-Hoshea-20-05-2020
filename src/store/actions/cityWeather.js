@@ -13,13 +13,13 @@ export const fetchCityWeather = (id, city, country) => async (dispatch) => {
     type: FETCH_CITY_WEATHER,
   });
   try {
-    // const [currentConditions, fiveDaysForecast] = await api.getCityWeather(id);
+    const [currentConditions, fiveDaysForecast] = await api.getCityWeather(id);
     dispatch({
       type: FETCH_CITY_WEATHER_SUCCESS,
-      // payload: { ...mapCityWeather(currentConditions.data[0], fiveDaysForecast.data), id, city, country },
+      payload: { ...mapCityWeather(currentConditions.data[0], fiveDaysForecast.data), id, city, country },
 
       // dummy:
-      payload: { ...mapCityWeather(dummyCurrentConditions, dummyForecast), id, city, country },
+      // payload: { ...mapCityWeather(dummyCurrentConditions, dummyForecast), id, city, country },
     });
   } catch (error) {
     console.log(error);

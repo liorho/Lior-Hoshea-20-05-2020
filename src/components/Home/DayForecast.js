@@ -8,21 +8,15 @@ function DayForecast({ forecast }) {
   const units = useSelector((state) => state.units);
 
   return (
-    // <div className="col mb-3" style={{"min-width": "18rem", "max-width":"30rem" }}>
-    /* <div class="card text-center"> */
-    /* <div class="card-body"> */
-      <Card border="light" className='text-center mx-1'>
-        <Card.Body>
-          <Card.Title>{getDayOfTheWeek(date)}</Card.Title>
-          <Card.Img style={{ width: 100 }} src={getWeatherIconSrc(dayIcon)}></Card.Img>
-          <Card.Text>
+      <Card border="light" className='text-center mx-1 day-forecast-card' >
+        <Card.Body className="day-forecast-card-body">
+          <Card.Title className="day-forecast-card-item">{getDayOfTheWeek(date)}</Card.Title>
+          <Card.Img style={{ width: "6rem" }} src={getWeatherIconSrc(dayIcon)} className="day-forecast-card-item"></Card.Img>
+          <Card.Title className="day-forecast-card-item">
             {calculateTemperature(temperature?.min, units)}° - {calculateTemperature(temperature?.max, units)}°
-          </Card.Text>
+          </Card.Title>
         </Card.Body>
-      </Card>
-
-    // </div>
-    // </div>
+    </Card>
   );
 }
 

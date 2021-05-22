@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
-import FavoritesBtn from '../common/FavoritesBtn';
+import FavoritesBtn from '../Favorites/FavoritesBtn';
 import WithLoadAndErrorHandler from '../hoc/WithLoadAndErrorHandler';
 
 function CityWeather() {

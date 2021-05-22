@@ -8,8 +8,8 @@ export const fetchCitiesAC = (input) => async (dispatch) => {
     type: FETCH_CITIES_AC,
   });
   try {
-    // const {data} = await api.getCitiesAC(input);
-    const data = dummyCities;
+    const {data} = await api.getCitiesAC(input);
+    // const data = dummyCities;
     dispatch({
       type: FETCH_CITIES_AC_SUCCESS,
       payload: mapCitiesAC(data),

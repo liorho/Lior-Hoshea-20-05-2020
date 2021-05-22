@@ -10,9 +10,9 @@ function Header(props) {
   const { location } = props;
 
   return (
-    <Navbar className='mx-auto'>
+    <Navbar className='mx-auto sticky-top' style={{"backgroundColor": "white"}}>
       <Navbar.Brand href={WEBSITE_URL} target='_blank'>
-        <img src={logo} width='30' height='30' className='d-inline-block align-top' alt='Weatherly logo' /> Weatherly
+        <img src={logo} style={{width: "2rem", height: "2rem"}} className='d-inline-block align-top' alt='Weatherly logo' /> Weatherly
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav' />
@@ -26,6 +26,7 @@ function Header(props) {
       </Nav>
     </Navbar>
   );
+  // width='30' height='30'
 }
 
 export default withRouter(Header);

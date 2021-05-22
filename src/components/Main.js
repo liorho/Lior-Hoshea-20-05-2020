@@ -7,7 +7,7 @@ import Favorites from './Favorites/Favorites';
 
 function Routes() {
   return (
-    <Container style={{ 'max-width': '900px' }}>
+    <Container style={{ 'maxWidth': '900px', "marginTop": "1rem" }}>
       <Switch>
         <Route exact path={'/home'} component={Home} />
         <Route exact path='/favorites' component={Favorites} />

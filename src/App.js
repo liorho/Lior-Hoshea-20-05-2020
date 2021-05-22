@@ -18,9 +18,9 @@ function App() {
     const init = async () => {
       try {
         const [lat, lon] = await getLatLon();
-        // const { id, city, country } = await getCityByLatLon(lat, lon);
+        const { id, city, country } = await getCityByLatLon(lat, lon);
         //dummy:
-        const { id, city, country } = { city: 'Tel Aviv', country: 'Israel', id: '215854' };
+        // const { id, city, country } = { city: 'Tel Aviv', country: 'Israel', id: '215854' };
         dispatch(fetchCityWeather(id, city, country));
       } catch (error) {
         console.log(error);
@@ -32,11 +32,11 @@ function App() {
 
   return (
     <Router>
-      <Container style={{ 'max-width': '1500px', height: '100vh' }}>
+      <Container >
         <Header />
         <Main />
-        <UnitsBtn />
       </Container>
+      <UnitsBtn />
     </Router>
   );
 }

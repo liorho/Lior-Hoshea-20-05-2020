@@ -14,25 +14,23 @@ function Favorite({ favorite }) {
   const {
     weather: {
       city,
+      country,
       currentConditions: { temperature, icon, text },
     },
   } = favorite;
-  
+
   const handleClick = () => {
     dispatch(setFavoriteToCityWeather(favorite.weather));
   };
 
   return (
     <LinkContainer to='/home' style={{ cursor: 'pointer' }} onClick={handleClick}>
-      <Card >
-        <Card.Img style={{ width: 300 }} src={getWeatherIconSrc(icon)}></Card.Img>
-        <Card.ImgOverlay>
-          <Card.Body>
-            <Card.Title>{city}</Card.Title>
-            <Card.Title>{text}</Card.Title>
-            <Card.Text>{calculateTemperature(temperature, units)}°</Card.Text>
-          </Card.Body>
-        </Card.ImgOverlay>
+      <Card border='light' className='text-center mx-1 favorite' style={{ 'minWidth': '150px', 'maxWidth': '200px' }}>
+        <Card.Body className="favorite-card-body">
+          <Card.Title className="favorite-card-item">{city}, {country}</Card.Title>
+          <Card.Img className="favorite-card-item" style={{ width: 100 }} src={getWeatherIconSrc(icon)}></Card.Img>
+          <Card.Title className="favorite-card-item">{calculateTemperature(temperature, units)}°</Card.Title>
+        </Card.Body>
       </Card>
     </LinkContainer>
   );

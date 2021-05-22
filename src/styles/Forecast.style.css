@@ -1,0 +1,16 @@
+@media screen and (max-width: 992px) {
+  .forecast {
+    flex-direction: column;
+  }
+  .day-forecast-card {
+  }
+
+  .day-forecast-card-body {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .day-forecast-card-item {
+    align-self: center;
+  }
+}

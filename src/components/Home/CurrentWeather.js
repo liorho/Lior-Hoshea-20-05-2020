@@ -13,7 +13,7 @@ function CurrentWeather() {
       {cityWeather.weather.currentConditions ? (
         <>
             <Row className='justify-content-center'>{cityWeather.weather.currentConditions.text}</Row>
-            <Row className='justify-content-center' style={{fontSize: "8rem"}}>{calculateTemperature(cityWeather.weather.currentConditions.temperature, units)}°</Row>
+            <Row className='justify-content-center' style={{fontSize: "7rem"}}>{calculateTemperature(cityWeather.weather.currentConditions.temperature, units)}°</Row>
         </>
       ) : (
         ''
