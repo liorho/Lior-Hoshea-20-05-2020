@@ -1,26 +1,28 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import { getWeatherIconSrc, getDayOfTheWeek } from '../../utils';
 import { useSelector } from 'react-redux';
-import {calculateTemperature} from '../../utils'
+import { getWeatherIconSrc, getDayOfTheWeek, calculateTemperature } from '../../utils';
 
-function DayForecast({forecast}) {
-  const { date, temperature, dayIcon, dayText } = forecast
-  const units = useSelector(state => state.units)
+function DayForecast({ forecast }) {
+  const { date, temperature, dayIcon, dayText } = forecast;
+  const units = useSelector((state) => state.units);
 
   return (
-    <Card>
-      <Card.Img style={{ width: 300 }} src={getWeatherIconSrc(dayIcon)}></Card.Img>
-      <Card.ImgOverlay>
-      <Card.Body>
-        <Card.Title>{getDayOfTheWeek(date)}</Card.Title>
-        <Card.Title>{dayText}</Card.Title>
-        <Card.Text>
-          {calculateTemperature(temperature?.min, units)}° - {calculateTemperature(temperature?.max, units)}°
-        </Card.Text>
+    // <div className="col mb-3" style={{"min-width": "18rem", "max-width":"30rem" }}>
+    /* <div class="card text-center"> */
+    /* <div class="card-body"> */
+      <Card border="light" className='text-center mx-1'>
+        <Card.Body>
+          <Card.Title>{getDayOfTheWeek(date)}</Card.Title>
+          <Card.Img style={{ width: 100 }} src={getWeatherIconSrc(dayIcon)}></Card.Img>
+          <Card.Text>
+            {calculateTemperature(temperature?.min, units)}° - {calculateTemperature(temperature?.max, units)}°
+          </Card.Text>
         </Card.Body>
-        </Card.ImgOverlay>
-    </Card>
+      </Card>
+
+    // </div>
+    // </div>
   );
 }
 

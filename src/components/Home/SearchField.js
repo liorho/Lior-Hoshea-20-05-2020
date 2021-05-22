@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactDOM from 'react-dom';
-
 import { Form, InputGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchCityWeather } from '../../store/actions/cityWeather';
 import { fetchCitiesAC, resetCitiesAC } from '../../store/actions/citiesAC';
 import WithLoadAndErrorHandler from '../hoc/WithLoadAndErrorHandler';
@@ -20,7 +18,7 @@ function SearchField() {
     const { id, city, country } = JSON.parse(e.target.value);
     dispatch(fetchCityWeather(id, city, country));
     setInput('');
-    ReactDOM.findDOMNode(formInput.current).value = '';
+    formInput.current.value = '';
     dispatch(resetCitiesAC());
   };
 
@@ -28,20 +26,21 @@ function SearchField() {
     setTimeout(() => setInput(e.target.value), DELAY);
   };
 
-  useEffect(() => ReactDOM.findDOMNode(formInput.current).focus(), [dispatch]);
+  useEffect(() => formInput.current.focus(), [dispatch]);
 
   useEffect(() => {
     if (input !== '') dispatch(fetchCitiesAC(input));
-  }, [dispatch ,input]);
+  }, [dispatch, input]);
 
   return (
-    <Form>
+    <Form className='justify-content-center w50'>
       <InputGroup>
         <InputGroup.Prepend>
           <InputGroup.Text>🔍</InputGroup.Text>
         </InputGroup.Prepend>
-        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} />
+        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} style={{ outline: 'none !important', 'boxShadow': 'none' }} />
       </InputGroup>
+
       <WithLoadAndErrorHandler state={citiesAC}>
         {citiesAC.cities.length ? (
           <Form.Control as='select' multiple onChange={handleSelect}>

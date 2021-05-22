@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import { getWeatherIconSrc } from '../../utils';
+import { Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import {calculateTemperature} from '../../utils'
+
+import { calculateTemperature } from '../../utils'
 
 function CurrentWeather() {
   const cityWeather = useSelector((state) => state.cityWeather);
@@ -12,12 +12,8 @@ function CurrentWeather() {
     <>
       {cityWeather.weather.currentConditions ? (
         <>
-          <Card.Img style={{ width: 100 }} src={getWeatherIconSrc(cityWeather.weather.currentConditions.icon)}></Card.Img>
-          <Card.Body>
-            <Card.Title>{cityWeather.weather.currentConditions.text}</Card.Title>
-            <Card.Text>{calculateTemperature(cityWeather.weather.currentConditions.temperature, units)}°</Card.Text>
-
-          </Card.Body>
+            <Row className='justify-content-center'>{cityWeather.weather.currentConditions.text}</Row>
+            <Row className='justify-content-center' style={{fontSize: "8rem"}}>{calculateTemperature(cityWeather.weather.currentConditions.temperature, units)}°</Row>
         </>
       ) : (
         ''

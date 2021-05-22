@@ -1,13 +1,15 @@
-import React from 'react'
-import SearchField from './SearchField'
-import CityWeather from './CityWeather'
+import React from 'react';
 
+import SearchField from './SearchField';
+import CityWeather from './CityWeather';
 
 function Home() {
-  return <>
-      <SearchField/>
-      <CityWeather/>
+  return (
+    <>
+      <SearchField />
+      <CityWeather />
     </>
+  );
 }
 
-export default Home
+export default Home;
