@@ -42,7 +42,7 @@ function SearchField() {
       </InputGroup>
 
       <WithLoadAndErrorHandler state={citiesAC}>
-        {citiesAC.cities.length ? (
+        {citiesAC.cities?.length ? (
           <Form.Control as='select' multiple onChange={handleSelect} className='position-absolute' style={{ zIndex: 1 }}>
             {citiesAC.cities?.map((c) => (
               <option style={{ cursor: 'pointer' }} key={c.id} value={JSON.stringify(c)}>
