@@ -1,7 +1,7 @@
 import React from 'react';
 import Favorite from './Favorite';
 import { useSelector } from 'react-redux';
-import { CardGroup, Jumbotron } from 'react-bootstrap';
+import { CardGroup } from 'react-bootstrap';
 
 import '../../styles/Favorites.style.css'
 

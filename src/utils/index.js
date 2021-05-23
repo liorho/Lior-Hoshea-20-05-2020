@@ -1,10 +1,8 @@
-import { DAYS, CELSIUS } from '../constants';
+import { DAYS, CELSIUS, APP_NAME } from '../constants';
 
 export const roundTemperature = (temperature) => Math.round(temperature);
 
 export const getWeatherIconSrc = (icon) => `https://developer.accuweather.com/sites/default/files/${icon >= 10 ? icon : '0' + icon}-s.png`;
-
-// export const getCityPicSrc = (cityName) => `https://api.teleport.org/api/urban_areas/slug:${cityName}/images`;
 
 export const getDayOfTheWeek = (date) => {
   const d = new Date(date);
@@ -23,4 +21,25 @@ export const getLatLon = async () => {
       reject({ error: 'Geolocation is not supported by this browser.' });
     }
   });
+};
+
+export const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem(APP_NAME);
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (error) {
+    return undefined;
+  }
+};
+
+export const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem(APP_NAME, serializedState);
+  } catch (error) {
+    console.log(error);
+  }
 };

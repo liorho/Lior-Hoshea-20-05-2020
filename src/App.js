@@ -8,31 +8,19 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { fetchCityWeather } from '../src/store/actions/cityWeather';
-import { getLatLon } from './utils';
-import { getCityByLatLon } from '../src/store/api';
+import { getCityByLatLon } from './api';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const init = async () => {
-      try {
-        const [lat, lon] = await getLatLon();
-        const { id, city, country } = await getCityByLatLon(lat, lon);
-        // Dummy:
-        // const { id, city, country } = { city: 'Tel Aviv', country: 'Israel', id: '215854' };
-        dispatch(fetchCityWeather(id, city, country));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
+    const init = async () => dispatch(fetchCityWeather(await getCityByLatLon()));
     init();
   }, [dispatch]);
 
   return (
     <Router>
-      <Container >
+      <Container style={{ maxWidth: '1500px' }}>
         <Header />
         <Main />
       </Container>

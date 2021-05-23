@@ -15,7 +15,7 @@ const citiesAC = (state = initialState, action) => {
     case FETCH_CITIES_AC_FAILURE:
       return { isLoading: false, weather: [], error: action.payload };
     case RESET_CITIES_AC:
-      return initialState
+      return initialState;
     default:
       return state;
   }

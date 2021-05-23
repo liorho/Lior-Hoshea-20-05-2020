@@ -1,4 +1,6 @@
 @import url("//fonts.googleapis.com/css?family=Oswald:400,300,700");
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 html {
   font-size: 20px;
 }
@@ -9,17 +11,16 @@ body {
   position: relative;
 }
 
+.logo {
+  font-family: 'Karla', sans-serif;
+}
+
+
 @media screen and (max-width: 500px) {
   html {
     font-size: 15px;
   }
 }
 
-
-
-
-
-
-
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 

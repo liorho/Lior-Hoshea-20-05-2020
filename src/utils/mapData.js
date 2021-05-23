@@ -1,4 +1,12 @@
-import {roundTemperature} from '../../utils'
+import { roundTemperature } from './index'
+
+export const mapCity = (city) => {
+  return { id: city.Key, city: city.LocalizedName, country: city.Country.LocalizedName }
+}
+
+export const mapCitiesAC = (cities) =>
+  cities.map(mapCity);
+
 
 const mapCurrentConditions = (currentWeather) => {
   return {

@@ -1,7 +1,10 @@
 import { SET_FAHRENHEIT, SET_CELSIUS } from '../actions/actionTypes';
-import {FAHRENHEIT, CELSIUS} from '../../constants'
+import {FAHRENHEIT, CELSIUS } from '../../constants'
+import {loadState} from '../../utils'
 
-const units = (units = CELSIUS, action) => {
+const initialState = loadState()?.units ? loadState().units : CELSIUS
+
+const units = (units = initialState, action) => {
   switch (action.type) {
     case SET_CELSIUS:
       return CELSIUS;

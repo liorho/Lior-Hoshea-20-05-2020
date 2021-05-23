@@ -15,8 +15,8 @@ function SearchField() {
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
-    const { id, city, country } = JSON.parse(e.target.value);
-    dispatch(fetchCityWeather(id, city, country));
+    const city = JSON.parse(e.target.value);
+    dispatch(fetchCityWeather(city));
     setInput('');
     formInput.current.value = '';
     dispatch(resetCitiesAC());
@@ -33,19 +33,19 @@ function SearchField() {
   }, [dispatch, input]);
 
   return (
-    <Form className='justify-content-center w50'>
+    <Form className='justify-content-center w50 position-relative'>
       <InputGroup>
         <InputGroup.Prepend>
           <InputGroup.Text>🔍</InputGroup.Text>
         </InputGroup.Prepend>
-        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} style={{ outline: 'none !important', 'boxShadow': 'none' }} />
+        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} style={{ outline: 'none !important', boxShadow: 'none' }} />
       </InputGroup>
 
       <WithLoadAndErrorHandler state={citiesAC}>
         {citiesAC.cities.length ? (
-          <Form.Control as='select' multiple onChange={handleSelect}>
+          <Form.Control as='select' multiple onChange={handleSelect} className='position-absolute' style={{ zIndex: 1 }}>
             {citiesAC.cities?.map((c) => (
-              <option key={c.id} value={JSON.stringify(c)}>
+              <option style={{ cursor: 'pointer' }} key={c.id} value={JSON.stringify(c)}>
                 {c.city}, {c.country}
               </option>
             ))}

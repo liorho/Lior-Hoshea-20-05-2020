@@ -1,9 +1,6 @@
-import * as api from '../api';
+import * as api from '../../api';
 import { FETCH_CITIES_AC, FETCH_CITIES_AC_SUCCESS, FETCH_CITIES_AC_FAILURE, RESET_CITIES_AC } from './actionTypes';
-import { mapCitiesAC } from '../utils/mapCitiesAC';
-
-// Dummy:
-// const dummyCities = require('../../data-samples/telAutoComplete.json');
+import { mapCitiesAC } from '../../utils/mapData';
 
 export const fetchCitiesAC = (input) => async (dispatch) => {
   dispatch({
@@ -11,8 +8,6 @@ export const fetchCitiesAC = (input) => async (dispatch) => {
   });
   try {
     const { data } = await api.getCitiesAC(input);
-    // Dummy:
-    // const data = dummyCities;
     dispatch({
       type: FETCH_CITIES_AC_SUCCESS,
       payload: mapCitiesAC(data),
@@ -21,7 +16,7 @@ export const fetchCitiesAC = (input) => async (dispatch) => {
     console.log(error);
     dispatch({
       type: FETCH_CITIES_AC_FAILURE,
-      payload: error.message,
+      payload: error,
     });
   }
 };

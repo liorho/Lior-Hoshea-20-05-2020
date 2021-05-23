@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { CardGroup,Container, Row, CardDeck, CardColumns } from 'react-bootstrap';
+import { CardGroup } from 'react-bootstrap';
 
-import '../../styles/Forecast.style.css'
+import '../../styles/Forecast.style.css';
 import DayForecast from './DayForecast';
 
 function Forecast() {
@@ -11,12 +11,11 @@ function Forecast() {
   return (
     <>
       {cityWeather.weather?.forecast ? (
-
-        <CardGroup className="forecast">
+        <CardGroup className='forecast'>
           {cityWeather.weather.forecast.map((f, i) => (
             <DayForecast key={i} forecast={f} />
           ))}
-          </CardGroup>
+        </CardGroup>
       ) : (
         ''
       )}

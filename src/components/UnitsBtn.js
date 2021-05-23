@@ -12,9 +12,9 @@ function UnitsBtn() {
   const ToggleUnits = () => {
     dispatch(setUnits(units === CELSIUS ? SET_FAHRENHEIT : SET_CELSIUS));
   };
-  
+
   return (
-    <span onClick={ToggleUnits} style={{ cursor: 'pointer', border: '1px solid black' }} className='p-1 position-absolute top-50 end-0'>
+    <span onClick={ToggleUnits} style={{ cursor: 'pointer' }} className='p-1 position-absolute top-50 end-0 border'>
       <span className={units === FAHRENHEIT ? 'text-muted' : ''}>°C</span>
       <span className='text-muted'> / </span>
       <span className={units === CELSIUS ? 'text-muted' : ''}>°F</span>

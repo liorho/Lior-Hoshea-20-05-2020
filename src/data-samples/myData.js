@@ -1,3 +1,5 @@
+// THIS IS HOW REFACTORED DATA WILL LOOK LIKE:
+
 const cityWeather = {
   isLoading: false,
   error: '',
@@ -22,6 +24,7 @@ const cityWeather = {
         dayIcon: 2,
         dayText: 'd',
       },
+      // ...
     ],
   },
 };
@@ -33,6 +36,7 @@ const citiesAC = {
       id: 3,
       city: "f",
       country: "ff"
-    }
+    },
+    /// ...
   ]
 }
