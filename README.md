@@ -1,9 +1,6 @@
 # Weatherly
 **Because every decent app's name ends with a "ly" ;)**
 
-
-
-
 Demo: [Weatherly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
 
 
@@ -33,24 +30,20 @@ Demo: [Weatherly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
 4. Navigate to `http://localhost:3000`.
 
 ## Screenshots
-1. Home:
+### Home:
 
-<img src="./assets/screen-shots/dark-home.png" alt="home page" width="75%" />
+<img src="./assets/screen-shots/dark-home.png" alt="home page" width="80%" />
+<br></br>
 
-2. Favorites:
+### Favorites:
 
-<img src="./assets/screen-shots/dark-fav.png" alt="favorites page" width="75%" />
+<img src="./assets/screen-shots/dark-fav.png" alt="favorites page" width="80%" />
+<br></br>
 
-3. Autocomplete:
+### Responsive:
 
-<img src="./assets/screen-shots/light-home-responsive-search.png" alt="autocomplete demo" width="75%" />
+<img src="./assets/screen-shots/light-responsive.png" alt="responsive" width="40%" />
 
-4. Responsive:
-
-<img src="./assets/screen-shots/dark-fav-responsive.png" alt="responsive demo" width="75%" />
-
-
-</br>
 </br>
 
 ## Tech-stack
