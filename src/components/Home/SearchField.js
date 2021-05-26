@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
+import {DELAY_INPUT_FETCH} from '../../constants'
 import { fetchCityWeather } from '../../store/actions/cityWeather';
 import { fetchCitiesAC, resetCitiesAC } from '../../store/actions/citiesAC';
 import WithLoadAndErrorHandler from '../hoc/WithLoadAndErrorHandler';
 
-const DELAY = 800;
+
 
 function SearchField() {
   const [input, setInput] = useState('');
@@ -23,7 +24,7 @@ function SearchField() {
   };
 
   const handleChange = (e) => {
-    setTimeout(() => setInput(e.target.value), DELAY);
+    setTimeout(() => setInput(e.target.value), DELAY_INPUT_FETCH);
   };
 
   useEffect(() => formInput.current.focus(), [dispatch]);
@@ -34,21 +35,21 @@ function SearchField() {
 
   return (
     <Form className='justify-content-center w50 position-relative'>
-      <InputGroup>
+      <InputGroup >
         <InputGroup.Prepend>
           <InputGroup.Text>🔍</InputGroup.Text>
         </InputGroup.Prepend>
-        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} style={{ outline: 'none !important', boxShadow: 'none' }} />
+        <Form.Control placeholder='Search City' onChange={handleChange} ref={formInput} className="abort-input-default" />
       </InputGroup>
 
       <WithLoadAndErrorHandler state={citiesAC}>
-        {citiesAC.cities?.length ? (
-          <Form.Control as='select' multiple onChange={handleSelect} className='position-absolute' style={{ zIndex: 1 }}>
-            {citiesAC.cities?.map((c) => (
-              <option style={{ cursor: 'pointer' }} key={c.id} value={JSON.stringify(c)}>
-                {c.city}, {c.country}
-              </option>
-            ))}
+        {citiesAC.cities?.length && input ? (
+          <Form.Control  as='select' multiple onChange={handleSelect} className='position-absolute z-1'>
+              {citiesAC.cities?.map((c) => (
+                <option className="cursor-pointer" key={c.id} value={JSON.stringify(c)}>
+                  {c.city}, {c.country}
+                </option>
+              ))}
           </Form.Control>
         ) : (
           ''

@@ -1,13 +1,13 @@
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from '../actions/actionTypes';
 
-const favorites = (favorites = [], action) => {
+const favorites = (state = [], action) => {
   switch (action.type) {
     case ADD_TO_FAVORITES:
-      return [...favorites, action.payload];
+      return [action.payload, ...state ];
     case REMOVE_FROM_FAVORITES:
-      return favorites.filter((f) => f.weather.id !== action.payload.weather.id);
+      return state.filter((f) => f.weather.id !== action.payload.weather.id);
     default:
-      return favorites;
+      return state;
   }
 };
 

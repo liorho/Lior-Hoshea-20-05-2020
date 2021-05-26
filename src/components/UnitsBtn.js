@@ -14,11 +14,11 @@ function UnitsBtn() {
   };
 
   return (
-    <span onClick={ToggleUnits} style={{ cursor: 'pointer' }} className='p-1 position-absolute top-50 end-0 border'>
-      <span className={units === FAHRENHEIT ? 'text-muted' : ''}>°C</span>
-      <span className='text-muted'> / </span>
-      <span className={units === CELSIUS ? 'text-muted' : ''}>°F</span>
-    </span>
+      <span onClick={ToggleUnits} className='bg-inherit p-1 position-fixed top-50 end-0 border cursor-pointer'>
+        <span className={units === FAHRENHEIT ? 'text-muted' : 'color-inherit'}>°C</span>
+        <span className='text-muted'> / </span>
+        <span className={units === CELSIUS ? 'text-muted' : 'color-inherit'}>°F</span>
+      </span>
   );
 }
 

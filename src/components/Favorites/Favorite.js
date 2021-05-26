@@ -23,12 +23,12 @@ function Favorite({ favorite }) {
   };
 
   return (
-    <LinkContainer to='/home' style={{ cursor: 'pointer' }} onClick={handleClick}>
-      <Card border='light' className='text-center mx-1 favorite' style={{ 'minWidth': '150px', 'maxWidth': '200px' }}>
-        <Card.Body className="favorite-card-body">
-          <Card.Title className="favorite-card-item">{city}, {country}</Card.Title>
-          <Card.Img className="favorite-card-item" style={{ width: 100 }} src={getWeatherIconSrc(icon)}></Card.Img>
-          <Card.Title className="favorite-card-item"><Temperature temperature= {temperature} /></Card.Title>
+    <LinkContainer to='/home' onClick={handleClick}>
+      <Card className='text-center m-1 weather-card cursor-pointer bg-inherit border'>
+        <Card.Body className="weather-card-body">
+          <Card.Title className="weather-card-item">{city}, {country}</Card.Title>
+          <Card.Img className="weather-card-item img" src={getWeatherIconSrc(icon)}></Card.Img>
+          <Card.Title className="weather-card-item"><Temperature temperature= {temperature} /></Card.Title>
         </Card.Body>
       </Card>
     </LinkContainer>

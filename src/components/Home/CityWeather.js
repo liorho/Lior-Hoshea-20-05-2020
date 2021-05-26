@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import CurrentWeather from './CurrentWeather';
 import Forecast from './Forecast';
-import FavoritesBtn from '../Favorites/FavoritesBtn';
+import FavoritesBtn from './FavoritesBtn';
 import WithLoadAndErrorHandler from '../hoc/WithLoadAndErrorHandler';
 
 function CityWeather() {
@@ -14,7 +14,7 @@ function CityWeather() {
     <WithLoadAndErrorHandler state={cityWeather}>
       {cityWeather.weather.currentConditions ? (
         <Container className='position-relative mt-3'>
-          <Row className='h1 justify-content-center position-relative'>{cityWeather.weather.city}</Row>
+          <Row className='justify-content-center position-relative bg-inherit font-3'>{cityWeather.weather.city}</Row>
           <FavoritesBtn />
           <CurrentWeather />
           <Forecast />

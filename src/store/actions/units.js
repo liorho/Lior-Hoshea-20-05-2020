@@ -1,8 +1,8 @@
-import { CELSIUS, FAHRENHEIT } from '../../constants'
-import {SET_CELSIUS} from '../actions/actionTypes'
-import {saveState} from '../../utils'
+import { CELSIUS, FAHRENHEIT } from '../../constants';
+import { SET_CELSIUS } from '../actions/actionTypes';
+import { saveToLocalStorage } from '../../utils';
 
 export const setUnits = (type) => (dispatch) => {
-  saveState({units: type === SET_CELSIUS ? CELSIUS : FAHRENHEIT})
+  saveToLocalStorage({ units: type === SET_CELSIUS ? CELSIUS : FAHRENHEIT });
   dispatch({ type });
 };

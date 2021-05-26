@@ -2,18 +2,19 @@ import React from 'react';
 import { Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 
-import { calculateTemperature } from '../../utils'
+import Temperature from '../common/Temperature';
 
 function CurrentWeather() {
   const cityWeather = useSelector((state) => state.cityWeather);
-  const units = useSelector(state => state.units)
 
   return (
     <>
       {cityWeather.weather.currentConditions ? (
         <>
-            <Row className='justify-content-center'>{cityWeather.weather.currentConditions.text}</Row>
-            <Row className='justify-content-center' style={{fontSize: "7rem"}}>{calculateTemperature(cityWeather.weather.currentConditions.temperature, units)}°</Row>
+          <Row className='justify-content-center'>{cityWeather.weather.currentConditions.text}</Row>
+          <Row className='text-center font-7'>
+            <Temperature temperature={cityWeather.weather.currentConditions.temperature} />
+          </Row>
         </>
       ) : (
         ''

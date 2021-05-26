@@ -3,28 +3,33 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { withRouter } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import {WEBSITE_URL} from '../constants'
+import { WEBSITE_URL } from '../constants'
 import logo from '../assets/weather-icon-512.png';
+import ModeBtn from './ModeBtn'
 
 function Header(props) {
   const { location } = props;
 
   return (
-    <Navbar className='mx-auto sticky-top bg-white' >
-      <Navbar.Brand href={WEBSITE_URL} target='_blank' className="logo">
-        <img src={logo} style={{width: "2rem", height: "2rem"}} className='d-inline-block align-top' alt='Weatherly logo' /> Weatherly
+    <Navbar className='mx-auto sticky-top bg-inherit' >
+      <Navbar.Brand href={WEBSITE_URL} target='_blank' className="logo color-inherit">
+        <img src={logo} className='logo-img' alt='Weatherly logo' /> Weatherly
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav' />
       <Nav activeKey={location.pathname} className='ml-auto'>
-        <LinkContainer to='/home'>
+        <LinkContainer to='/home' activeClassName="color-inherit">
           <Nav.Link>Home</Nav.Link>
         </LinkContainer>
-        <LinkContainer to='/favorites'>
+        <LinkContainer to='/favorites' activeClassName="color-inherit">
           <Nav.Link>Favorites</Nav.Link>
         </LinkContainer>
       </Nav>
+
+      <ModeBtn />
+
     </Navbar>
+    // className="text-muted" activeClassName="color-inherit"
   );
 }
 

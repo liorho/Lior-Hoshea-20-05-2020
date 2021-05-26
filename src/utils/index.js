@@ -23,23 +23,25 @@ export const getLatLon = async () => {
   });
 };
 
-export const loadState = () => {
+export const getLocalStorage = () => {
   try {
-    const serializedState = localStorage.getItem(APP_NAME);
-    if (serializedState === null) {
-      return undefined;
-    }
-    return JSON.parse(serializedState);
+    const currentLocalStorage = localStorage.getItem(APP_NAME);
+    return currentLocalStorage === null ? {} : JSON.parse(currentLocalStorage);
   } catch (error) {
+    console.log(error);
     return undefined;
   }
 };
 
-export const saveState = (state) => {
+export const saveToLocalStorage = (state) => {
   try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem(APP_NAME, serializedState);
+    const currentLocalStorage = getLocalStorage();
+    if (currentLocalStorage) {
+      const updatedLocalStorage = { ...currentLocalStorage, ...state };
+      localStorage.setItem(APP_NAME, JSON.stringify(updatedLocalStorage));
+    }
   } catch (error) {
     console.log(error);
+    return undefined;
   }
 };

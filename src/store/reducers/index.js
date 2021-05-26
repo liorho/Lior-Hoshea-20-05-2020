@@ -4,6 +4,7 @@ import citiesAC from './citiesAC'
 import favorites from './favorites'
 import cityWeather from './cityWeather'
 import units from './units'
+import mode from './mode'
 
 
 export default combineReducers({
@@ -11,4 +12,5 @@ export default combineReducers({
     favorites,
     citiesAC,
     units,
+    mode
 })
