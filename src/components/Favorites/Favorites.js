@@ -9,16 +9,16 @@ function Favorites() {
   return (
     <>
       {favorites.length ? (
-        <CardGroup className="weather-cards-container">
-          {favorites.map((f) => (
-            <Favorite key={f.weather.id} favorite={f} />
-          ))}
-        </CardGroup>
+        <>
+          <h1 className='text-center'>Your Favorites</h1>
+          <CardGroup className='weather-cards-container'>
+            {favorites.map((f) => (
+              <Favorite key={f.weather.id} favorite={f} />
+            ))}
+          </CardGroup>
+        </>
       ) : (
-      <h1 className="text-center">
-        No Favorites Yet
-      </h1>
-
+        <h1 className='text-center'>No Favorites Yet</h1>
       )}
     </>
   );

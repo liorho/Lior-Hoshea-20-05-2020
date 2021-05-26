@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Main from './components/Main';
-import UnitsBtn from './components/UnitsBtn';
+
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -28,7 +28,6 @@ function App() {
         <Header />
         <Main />
       </Container>
-      <UnitsBtn />
     </Router>
   );
 }

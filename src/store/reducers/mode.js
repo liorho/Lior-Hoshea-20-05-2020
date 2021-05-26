@@ -2,7 +2,7 @@ import { SET_DARK_MODE, SET_LIGHT_MODE } from '../actions/actionTypes';
 import {DARK_MODE, LIGHT_MODE } from '../../constants'
 import {getLocalStorage} from '../../utils'
 
-const initialState = getLocalStorage()?.mode ? getLocalStorage().mode : LIGHT_MODE
+const initialState = getLocalStorage()?.mode ? getLocalStorage().mode : DARK_MODE
 
 const mode = (state = initialState, action) => {
   switch (action.type) {

@@ -14,9 +14,10 @@ function CityWeather() {
     <WithLoadAndErrorHandler state={cityWeather}>
       {cityWeather.weather.currentConditions ? (
         <Container className='position-relative mt-3'>
-          <Row className='justify-content-center position-relative bg-inherit font-3'>{cityWeather.weather.city}</Row>
+          <Row className='justify-content-center position-relative bg-inherit font-2'>{cityWeather.weather.city}</Row>
           <FavoritesBtn />
           <CurrentWeather />
+
           <Forecast />
         </Container>
       ) : (
