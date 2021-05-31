@@ -4,12 +4,10 @@ import { withRouter } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useSelector } from 'react-redux';
 
-import { WEBSITE_URL } from '../constants';
+import { WEBSITE_URL, DARK_MODE } from '../constants';
 import logo from '../assets/weather-icon-512.png';
 import ModeBtn from './ModeBtn';
 import UnitsBtn from './UnitsBtn';
-import { DARK_MODE } from '../constants';
-
 
 function Header(props) {
   const { location } = props;

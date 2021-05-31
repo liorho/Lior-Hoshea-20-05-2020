@@ -1,0 +1,28 @@
+.favorites{
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.favorite{
+  max-width: 200px;
+  min-width:200px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .favorites {
+    flex-direction: column;
+  }
+  .favorite {
+    max-width:100%;
+  }
+
+  .favorite-card-body {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .favorite-card-item {
+    align-self: center;
+  }
+}

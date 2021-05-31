@@ -11,10 +11,10 @@ function ModeBtn() {
   const toggleMode = () => {
     dispatch(setMode(mode === DARK_MODE ? SET_LIGHT_MODE : SET_DARK_MODE));
   };
-  
+
   return (
     <div className='pl-3'>
-    <i onClick={toggleMode} className="fas fa-sun mode-btn cursor-pointer "></i>
+    <i onClick={toggleMode} className="fas fa-sun mode-btn cursor-pointer"></i>
     </div>
     );
   }
